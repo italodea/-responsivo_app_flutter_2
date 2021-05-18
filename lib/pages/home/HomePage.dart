@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insta_responsivo_app/pages/home/widgets/PostWidget.dart';
 import 'package:insta_responsivo_app/pages/home/widgets/ResponsiveAppBar.dart';
 import 'package:insta_responsivo_app/pages/home/widgets/StoriesList.dart';
 
@@ -10,7 +11,7 @@ class HomePage extends StatelessWidget {
         preferredSize: Size(double.infinity, 52),
         child: ResponsiveAppBar(),
       ),
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.black87,
       body: Align(
         alignment: Alignment.topCenter,
         child: ConstrainedBox(
@@ -20,6 +21,9 @@ class HomePage extends StatelessWidget {
           child: ListView(
             children: [
               StoriesList(),
+              PostWidget(),
+              PostWidget(),
+              PostWidget(),
             ],
           )
         ),
