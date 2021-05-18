@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insta_responsivo_app/pages/home/widgets/PostWidget.dart';
 import 'package:insta_responsivo_app/pages/home/widgets/ResponsiveAppBar.dart';
+import 'package:insta_responsivo_app/pages/home/widgets/RigthPanel.dart';
 import 'package:insta_responsivo_app/pages/home/widgets/StoriesList.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,18 +16,24 @@ class HomePage extends StatelessWidget {
       body: Align(
         alignment: Alignment.topCenter,
         child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxWidth: 1200,
-          ),
-          child: ListView(
-            children: [
-              StoriesList(),
-              PostWidget(),
-              PostWidget(),
-              PostWidget(),
-            ],
-          )
-        ),
+            constraints: BoxConstraints(
+              maxWidth: 1200,
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: ListView(
+                    children: [
+                      StoriesList(),
+                      PostWidget(),
+                      PostWidget(),
+                      PostWidget(),
+                    ],
+                  ),
+                ),
+                RigthPanel()
+              ],
+            )),
       ),
     );
   }
