@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insta_responsivo_app/pages/home/widgets/ResponsiveAppBar.dart';
+import 'package:insta_responsivo_app/pages/home/widgets/StoriesList.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -8,6 +9,20 @@ class HomePage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size(double.infinity, 52),
         child: ResponsiveAppBar(),
+      ),
+      backgroundColor: Colors.black,
+      body: Align(
+        alignment: Alignment.topCenter,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: 1200,
+          ),
+          child: ListView(
+            children: [
+              StoriesList(),
+            ],
+          )
+        ),
       ),
     );
   }
